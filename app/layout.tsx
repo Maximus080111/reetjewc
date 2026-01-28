@@ -2,9 +2,9 @@ import './globals.css';
 
 import { GeistSans } from 'geist/font/sans';
 
-let title = 'Next.js + Postgres Auth Starter';
+let title = 'Reetjewc';
 let description =
-  'This is a Next.js starter kit that uses NextAuth.js for simple email + password login and a Postgres database to persist the data.';
+  'Van porseleinen troon tot nachtmerrie: review ze allemaal.';
 
 export const metadata = {
   title,

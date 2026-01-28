@@ -22,30 +22,46 @@ export default function Login() {
   }
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-[#66717E]">
-      <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
-        <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
-          <h3 className="text-xl font-semibold">Sign Up</h3>
-          <Image 
-                      src="/reetjewc.png"
-                      alt="ReetjeWC Logo"
-                      width={500}
-                      height={500}
-                    />
-          <p className="text-sm text-gray-500">
-            Create an account with your email and password
-          </p>
+    <div className="relative flex min-h-screen flex-col bg-slate-950 text-white">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/40 via-fuchsia-500/25 to-cyan-400/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.18),transparent_55%)]" />
+
+      <div className="relative flex flex-1 items-center justify-center px-6 py-10">
+        <Link
+          href="/"
+          className="absolute left-6 top-6 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/90 bg-slate-950/70 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+        >
+          Back
+        </Link>
+
+        <div className="w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur">
+          <div className="flex flex-col items-center justify-center space-y-4 border-b border-white/10 bg-slate-950/70 px-6 py-8 text-center">
+            <Image
+              src="/reetjewc.png"
+              alt="ReetjeWC Logo"
+              width={140}
+              height={140}
+              priority
+            />
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold tracking-tight">Sign Up</h3>
+              <p className="text-sm text-white/70">
+                Create an account with your username, email and password.
+              </p>
+            </div>
+          </div>
+
+          <Form action={register} showUsername>
+            <SubmitButton>Sign Up</SubmitButton>
+            <p className="text-center text-sm text-slate-800">
+              {'Already have an account? '}
+              <Link href="/login" className="font-semibold text-black underline">
+                Sign in
+              </Link>
+              {' instead.'}
+            </p>
+          </Form>
         </div>
-        <Form action={register} showUsername>
-          <SubmitButton>Sign Up</SubmitButton>
-          <p className="text-center text-sm text-gray-600">
-            {'Already have an account? '}
-            <Link href="/login" className="font-semibold text-gray-800">
-              Sign in
-            </Link>
-            {' instead.'}
-          </p>
-        </Form>
       </div>
     </div>
   );
